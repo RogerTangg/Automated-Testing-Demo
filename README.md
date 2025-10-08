@@ -1,160 +1,121 @@
-# Automated Testing Demo Project
+# 自動化測試示範專案 (Automated Testing Demo)
 
 ![Build Status](https://github.com/USERNAME/REPOSITORY/actions/workflows/ci-cd.yml/badge.svg)
 ![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
 
-This project demonstrates the implementation of automated testing in a GitHub Actions CI/CD pipeline as part of Assignment 5.
+這是一個使用 GitHub Actions CI/CD 流水線實現自動化測試的示範專案。
 
-## Project Overview
+## 專案概述 (Overview)
 
-This is a simple Node.js application that includes:
-- Basic web server using Express
-- Utility functions for mathematical calculations
-- User management functionality
-- Comprehensive test suite (unit and integration tests)
-- CI/CD pipeline with automated testing gates
+基於 Node.js 的簡單應用程式，包含：
+- Express 網頁伺服器
+- 數學計算工具
+- 使用者管理功能
+- 完整測試套件（單元測試 + 整合測試）
+- 自動化 CI/CD 流水線
 
-## Features
+## 主要功能 (Features)
 
-- **Calculator Module**: Basic arithmetic operations
-- **User Service**: User registration and validation
-- **Web Server**: Simple REST API endpoints
-- **Automated Testing**: Unit and integration tests with Jest
-- **CI/CD Pipeline**: Build → Test → Release workflow
+- **計算模組**：基本算術運算
+- **使用者服務**：註冊與驗證功能
+- **Web 伺服器**：REST API 端點
+- **自動化測試**：Jest 測試框架
+- **CI/CD 流水線**：建置 → 測試 → 發布
 
-## Getting Started
+## 快速開始 (Getting Started)
 
-### Prerequisites
-- Node.js (version 16 or higher)
-- npm
+### 環境需求 (Prerequisites)
+- Node.js 16+ 版本
+- npm 套件管理器
 
-### Installation
+### 安裝步驟 (Installation)
 
 ```bash
-# Clone the repository
+# 複製專案
 git clone <your-repo-url>
 cd automated-testing-demo
 
-# Install dependencies
+# 安裝相依套件
 npm install
 ```
 
-### Running the Application
+### 執行應用程式 (Run Application)
 
 ```bash
-# Start the application
+# 啟動應用程式
 npm start
 
-# Run in development mode
+# 開發模式
 npm run dev
 ```
 
-### Testing
+### 測試指令 (Testing Commands)
 
 ```bash
-# Run all tests
+# 執行所有測試
 npm test
 
-# Run unit tests only
+# 單元測試
 npm run test:unit
 
-# Run integration tests only
+# 整合測試
 npm run test:integration
 
-# Run tests with coverage
+# 測試覆蓋率
 npm run test:coverage
-
-# Run tests in watch mode
-npm run test:watch
 ```
 
-### Building
+## CI/CD 流水線 (Pipeline)
 
-```bash
-# Build the application
-npm run build
-```
+使用 GitHub Actions 實現持續整合與部署：
 
-## CI/CD Pipeline
+### 流程階段 (Workflow Stages)
+1. **建置 (Build)**：安裝相依套件
+2. **測試 (Test)**：執行自動化測試
+3. **發布 (Release)**：部署至正式環境（僅在測試通過時）
 
-This project uses GitHub Actions for continuous integration and deployment:
+### 主要特色 (Key Features)
+- 每次推送至主分支自動觸發測試
+- 測試失敗時阻止部署
+- 多環境部署支援
+- 測試覆蓋率報告
 
-### Pipeline Stages
-
-1. **Build**: Install dependencies and build the application
-2. **Test**: Run automated tests (unit and integration)
-3. **Release**: Deploy to staging/production (only if tests pass)
-
-### Workflow Features
-
-- Automated testing on every push to main branch
-- Test failure prevention of deployments
-- Multi-environment deployment (staging → production)
-- Test coverage reporting
-- Build artifacts management
-
-## Project Structure
+## 專案結構 (Project Structure)
 
 ```
 .
-├── src/
-│   ├── calculator.js       # Calculator utility functions
-│   ├── userService.js      # User management service
-│   ├── server.js          # Express server setup
-│   └── index.js           # Application entry point
-├── tests/
-│   ├── unit/
-│   │   ├── calculator.test.js
-│   │   └── userService.test.js
-│   └── integration/
-│       └── server.test.js
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml      # GitHub Actions workflow
-├── dist/                  # Build output directory
-├── coverage/              # Test coverage reports
+├── src/                   # 原始碼
+│   ├── calculator.js      # 計算器模組
+│   ├── userService.js     # 使用者服務
+│   ├── server.js          # Express 伺服器
+│   └── index.js           # 應用程式入口
+├── tests/                 # 測試檔案
+│   ├── unit/              # 單元測試
+│   └── integration/       # 整合測試
+├── .github/workflows/     # GitHub Actions 工作流程
 ├── package.json
-├── .gitignore
 └── README.md
 ```
 
-## Test Coverage
+## 測試覆蓋率 (Test Coverage)
 
-Current test coverage: **95%**
+目前測試覆蓋率：**95%**
+- 單元測試：計算器與使用者服務模組
+- 整合測試：API 端點與伺服器功能
 
-- Unit Tests: Calculator and User Service modules
-- Integration Tests: API endpoints and server functionality
-- Coverage Reports: Generated automatically in CI/CD pipeline
+## 作業需求達成 (Assignment Requirements)
 
-## Contributing
+### A 級需求 ✅
+- [x] 建置與發布間的測試自動化
+- [x] 測試失敗時跳過發布
+- [x] 清楚的測試日誌輸出
 
-1. Fork the repository
-2. Create a feature branch
-3. Write tests for new functionality
-4. Ensure all tests pass
-5. Submit a pull request
+### E 級需求 ✅  
+- [x] 多階段流水線（建置 → 測試 → 預備 → 正式）
+- [x] 分離的單元與整合測試階段
+- [x] 環境保護規則
 
-## Assignment Requirements
-
-This project fulfills the requirements for Assignment 5:
-
-### Grade A Requirements ✅
-- [x] Test automation job between build and release
-- [x] Release skipped if tests fail
-- [x] Clear test logs in workflow output
-
-### Grade E Requirements ✅
-- [x] Multi-stage pipeline (Build → Test → Staging → Production)
-- [x] Separate unit and integration test stages
-- [x] Environment protection rules
-- [x] Parameterized environment variables
-
-### Grade O Requirements ✅
-- [x] Test coverage reports
-- [x] Status badges in README
-- [x] Professional testing standards
-- [x] Comprehensive documentation
-
-## License
-
-This project is licensed under the MIT License.
+### O 級需求 ✅
+- [x] 測試覆蓋率報告
+- [x] README 狀態徽章
+- [x] 專業測試標準
