@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "build": "npm run clean && npm run copy-files",
+    "build": "npm run clean && node scripts/build.js",
     "clean": "rimraf dist",
-    "copy-files": "mkdir dist & copy src\\*.js dist\\",
+    "copy-files": "node scripts/build.js",
     "test": "jest",
     "test:unit": "jest --testPathPattern=tests/unit",
     "test:integration": "jest --testPathPattern=tests/integration",
