@@ -1,0 +1,50 @@
+{
+  "name": "automated-testing-demo",
+  "version": "1.0.0",
+  "description": "A demo project for implementing automated testing in GitHub Actions workflow",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "npm run clean && npm run copy-files",
+    "clean": "rimraf dist",
+    "copy-files": "mkdir dist & copy src\\*.js dist\\",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "devops",
+    "ci-cd",
+    "github-actions",
+    "automated-testing"
+  ],
+  "author": "DevOps Student",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "supertest": "^6.3.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "lodash": "^4.17.21"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
