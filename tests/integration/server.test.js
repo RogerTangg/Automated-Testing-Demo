@@ -43,7 +43,7 @@ describe('Server API Integration Tests', () => {
       expect(response.body).toEqual({
         result: 8,
         operation: 'addition',
-        inputs: { a: '5', b: '3' }
+        inputs: { a: 5, b: 3 }
       });
     });
 
@@ -56,7 +56,7 @@ describe('Server API Integration Tests', () => {
       expect(response.body).toEqual({
         result: 6,
         operation: 'subtraction',
-        inputs: { a: '10', b: '4' }
+        inputs: { a: 10, b: 4 }
       });
     });
 
@@ -69,7 +69,7 @@ describe('Server API Integration Tests', () => {
       expect(response.body).toEqual({
         result: 42,
         operation: 'multiplication',
-        inputs: { a: '6', b: '7' }
+        inputs: { a: 6, b: 7 }
       });
     });
 
@@ -82,7 +82,7 @@ describe('Server API Integration Tests', () => {
       expect(response.body).toEqual({
         result: 5,
         operation: 'division',
-        inputs: { a: '15', b: '3' }
+        inputs: { a: 15, b: 3 }
       });
     });
 
