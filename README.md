@@ -1,8 +1,5 @@
 # 自動化測試示範專案 (Automated Testing Demo)
 
-![Build Status](https://github.com/USERNAME/REPOSITORY/actions/workflows/ci-cd.yml/badge.svg)
-![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
-
 這是一個使用 GitHub Actions CI/CD 流水線實現自動化測試的示範專案。
 
 ## 專案概述 (Overview)
